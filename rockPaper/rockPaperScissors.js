@@ -17,18 +17,19 @@ function generateRandom(maxLimit=3){
     return rand
 }
 
-let pcChoice = rockPaperScissors[generateRandom()]
-
 let userInput;
 
 button.addEventListener('click', function(){
     const userInput = document.querySelector("input").value.toUpperCase();
+    let pcChoice = rockPaperScissors[generateRandom()]
     console.log(userInput)
-    const p = document.createElement('p');
+    let p = document.querySelector('p')
+    if (!p){
+        p = document.createElement('p')
+        container.appendChild(p);
+    }
     const winner = defineWinner(userInput, pcChoice);
     p.textContent = winner
-
-    container.appendChild(p);
 });
 
 container.appendChild(content);
@@ -47,6 +48,10 @@ function defineWinner(userInput, pcChoice){
     
     else if (pcChoice === 'SCISSORS' && userInput === 'ROCK'){
         winner = 'You won! ROCK cracks SCISSORS.';
+    }
+
+    else if (pcChoice === userInput) {
+        winner = "DRAW";
     }
     
     else {
