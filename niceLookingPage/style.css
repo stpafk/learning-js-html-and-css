@@ -1,4 +1,60 @@
 
-.main {
-    background-color: rgb(29, 67, 100);
+body {
+    background-color: #1F2937;
+}
+
+.header {
+    display: flex;
+    justify-content:space-between;
+    padding: 8px;
+    color: #F9FAF8;
+}
+
+ .header .left .logo {
+    font-size: 24px;
+    color: #F9FAF8;
+ }
+
+ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 16px;
+  }
+
+  a {
+    /* this removes the line under our links */
+    text-decoration: none;
+    color: white;
+  }
+
+.header.content {
+    display: flex;
+    justify-content: center;
+}
+
+.white.board {
+    background-color: #F9FAF8;
+}
+
+.white.board h2 {
+    display: flex;
+    color: black;
+    padding: 24px;
+    justify-content: center;
+}
+/*remember to add some shadows for the images */
+.container.info {
+    display: flex;
+    justify-content: center;
+    margin: 56px;
+}
+
+.gray.board {
+    background-color: #E5E7EB;
+}
+
+.blue.board {
+    background-color: #3882F6;
 }
