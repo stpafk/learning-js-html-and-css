@@ -1,15 +1,17 @@
-
-const container = document.querySelector('#container');
-
-const content = document.createElement('input');
-content.type = "text";
-content.classList.add('player');
-content.placeholder = 'Select your move';
-
-const button = document.createElement('button');
-button.textContent = 'Submit';
-
 const rockPaperScissors = ['ROCK', 'PAPER', 'SCISSORS']
+const container = document.querySelector('#container');
+var userPoints = 0
+var pcPoints = 0
+
+if (userPoints === 5) {
+    container.createElement('p');
+    p.textContent = "You won the PC!";
+};
+
+if (pcPoints === 5) {
+    container.createElement('p');
+    p.textContent = "PC won.";
+};
 
 function generateRandom(maxLimit=3){
     let rand = Math.random() * maxLimit;
@@ -17,37 +19,45 @@ function generateRandom(maxLimit=3){
     return rand
 }
 
-let userInput;
+let userInput = undefined
 
-button.addEventListener('click', function(){
-    const userInput = document.querySelector("input").value.toUpperCase();
-    let pcChoice = rockPaperScissors[generateRandom()]
-    console.log(userInput)
-    let p = document.querySelector('p')
-    if (!p){
-        p = document.createElement('p')
-        container.appendChild(p);
-    }
-    const winner = defineWinner(userInput, pcChoice);
-    p.textContent = winner
+let rock = document.querySelector('#rock');
+let paper = document.querySelector('#paper');
+let scissor = document.querySelector('Scissors');
+
+rock.addEventListener('click', function() {
+    userInput = rockPaperScissors[0];
+    pcChoice = rockPaperScissors[generateRandom()];
+    defineWinner(userInput, pcChoice);
 });
 
-container.appendChild(content);
-container.appendChild(button);
+paper.addEventListener('click', function() {
+    userInput = rockPaperScissors[1];
+    pcChoice = rockPaperScissors[generateRandom()];
+    defineWinner(userInput, pcChoice);
+});
 
-let winner;
+scissor.addEventListener('click', function() {
+    userInput = rockPaperScissors[2];
+    pcChoice = rockPaperScissors[generateRandom()];
+    defineWinner(userInput, pcChoice);
+
+});
 
 function defineWinner(userInput, pcChoice){
     if (pcChoice === 'ROCK' && userInput === 'PAPER'){
         winner = 'You won! PAPER covers ROCK.';
+        userPoints += 1
     }
     
     else if (pcChoice === 'PAPER' && userInput === 'SCISSORS'){
         winner = 'You won! SCISSORS cuts PAPER.';
+        userPoints += 1
     }
     
     else if (pcChoice === 'SCISSORS' && userInput === 'ROCK'){
         winner = 'You won! ROCK cracks SCISSORS.';
+        userPoints += 1
     }
 
     else if (pcChoice === userInput) {
@@ -56,7 +66,13 @@ function defineWinner(userInput, pcChoice){
     
     else {
         winner = `${pcChoice} beats ${userInput}`;
+        pcPoints += 1
     };
 
-    return winner
+    if (!p){
+        p = document.createElement('p')
+        container.appendChild(p);}
+
+    let p = document.querySelector('p');
+    p.textContent = winner;
 }
