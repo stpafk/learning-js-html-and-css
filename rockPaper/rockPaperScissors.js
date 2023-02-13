@@ -3,14 +3,14 @@ const container = document.querySelector('#container');
 var userPoints = 0
 var pcPoints = 0
 
-if (userPoints === 5) {
-    container.createElement('p');
+if (userPoints >= 5) {
+    const p = document.querySelector('p');
     p.textContent = "You won the PC!";
 };
 
 if (pcPoints === 5) {
-    container.createElement('p');
-    p.textContent = "PC won.";
+    const p = document.querySelector('p');
+    p.textContent = "PC Won";
 };
 
 function generateRandom(maxLimit=3){
@@ -23,7 +23,7 @@ let userInput = undefined
 
 let rock = document.querySelector('#rock');
 let paper = document.querySelector('#paper');
-let scissor = document.querySelector('Scissors');
+let scissor = document.querySelector('#Scissors');
 
 rock.addEventListener('click', function() {
     userInput = rockPaperScissors[0];
@@ -69,10 +69,9 @@ function defineWinner(userInput, pcChoice){
         pcPoints += 1
     };
 
+    let p = document.querySelector('p');
     if (!p){
         p = document.createElement('p')
         container.appendChild(p);}
-
-    let p = document.querySelector('p');
     p.textContent = winner;
 }
