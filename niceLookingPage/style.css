@@ -42,6 +42,7 @@ ul {
 
 .white.board {
     background-color: #F9FAF8;
+    padding-bottom: 50px;
 }
 
 
@@ -99,5 +100,9 @@ ul {
 }
 
 .blue.board {
+    display: flex;
     background-color: #3882F6;
+    margin: 50px;
+    margin-bottom: 10px;
+    padding: 20px;
 }
