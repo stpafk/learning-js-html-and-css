@@ -32,14 +32,18 @@ ul {
 .header.content {
     display: flex;
     align-items: center;
-    padding-left: 180px;
+    padding-left: 200px;
 }
 
 .placeholder.image {
-    height: 150px;
+    display: flex;
+    height: 180px;
     width: 300px;
-    margin-right: 100px;
+    margin-right: 270px;
     background-color: gray;
+    color: black;
+    justify-content: center;
+    align-items: center;
 }
 
 .header.content h1 {
@@ -124,4 +128,17 @@ ul {
     margin: 50px;
     margin-bottom: 10px;
     padding: 20px;
+}
+
+.blue.board .blue.button {
+    justify-content: right;
+    color: #3882F6;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    color: white;
 }
