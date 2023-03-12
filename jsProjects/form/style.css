@@ -57,7 +57,7 @@ img {
 
 button {
     margin-top: 5vh;
-    background-color: #4CAF50;
+    background-color: #550c3d;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -70,3 +70,7 @@ button {
     border-radius: 4px;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
   }
+
+.account {
+    
+}
