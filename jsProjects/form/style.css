@@ -45,18 +45,33 @@ img {
 .form-group {
     display:inline-block;
     width: 49%;
+    padding-top: 5px;
+    padding-bottom: 5px;
     
 }
 
+.form-group input {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4)
+}
+
+
+.form-group:focus input {
+    border: 2px solid #550c3d;
+}
+
+.form-group:focus-within input {
+    border: 2px solid #550c3d;
+    outline: none;
+  }
 
 .form-group label {
     display: block;
     padding-top: 10px;
-    
+    padding-bottom: 2px;
+    color: rgba(31, 18, 18, 0.76);
 }
 
 button {
-    margin-top: 5vh;
     background-color: #550c3d;
     color: white;
     border: none;
@@ -65,12 +80,20 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin-top: 2vh;
+    margin-left: 5vh;
     cursor: pointer;
     border-radius: 4px;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
   }
 
 .account {
-    
+    margin-top: 1vh;
+    margin-left: 5vh;
+
+}
+
+.account a {
+    color: #550c3d;
+    text-decoration: none;
 }
